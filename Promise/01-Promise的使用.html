@@ -8,10 +8,67 @@
   <body>
     <h2></h2>
     <script>
-      setTimeout(() => {
+      // setTimeout(() => {
+      //   console.log("Hello World!");
+      // }, 1000);
+      //一般来说有异步操作时，使用Promise对异步操作进行封装
+
+      new Promise((resolve, reject) => {
+        // 第一次网络请求的代码
+        setTimeout(() => {
+          resolve();
+        }, 1000);
+      }).then(() => {
+        // 第一次处理的代码
         console.log("Hello World!");
-      }, 1000);
-      new Promise({});
+        console.log("Hello World!");
+        console.log("Hello World!");
+        console.log("Hello World!");
+        console.log("Hello World!");
+        console.log("Hello World!");
+        return new Promise((resolve, reject) => {
+          // 第二次网络请求的代码
+          setTimeout(() => {
+            resolve();
+          }, 1000);
+        })
+          .then(() => {})
+          .then(() => {
+            // 第二次处理的代码
+            console.log("Hello GitHub!");
+            console.log("Hello GitHub!");
+            console.log("Hello GitHub!");
+            console.log("Hello GitHub!");
+            console.log("Hello GitHub!");
+            console.log("Hello GitHub!");
+            return new Promise((resolve, reject) => {
+              // 第三次网络请求的代码
+              setTimeout(() => {
+                resolve();
+              }, 1000);
+            }).then(() => {
+              // 第三次处理的代码
+              console.log("Hello China!");
+              console.log("Hello China!");
+              console.log("Hello China!");
+              console.log("Hello China!");
+              console.log("Hello China!");
+              console.log("Hello China!");
+            });
+          });
+      });
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("Hi,Saturday");
+          reject("error");
+        }, 1000);
+      })
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.log("error");
+        });
     </script>
   </body>
 </html>
