@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      Promise.all([
+        //请求一
+        new Promise(resolve => {
+          setTimeout(() => {
+            resolve({ name: "JYH", age: 20, gender: "male" });
+          }, 1000);
+        }),
+        //请求二
+        new Promise(resolve => {
+          setTimeout(() => {
+            resolve({ name: "YCY", age: 20, gender: "female" });
+          }, 2000);
+        })
+      ]).then(results => console.log(results)); //当所有请求成功时
+    </script>
+  </body>
+</html>
