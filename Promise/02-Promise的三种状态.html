@@ -6,6 +6,16 @@
     <title>Document</title>
   </head>
   <body>
+    <ul>
+      <h3>三种状态</h3>
+      <li>pending:等待状态，比如正在进行网络请求，或者定时器没有到时间</li>
+      <li>
+        fulfill:满足状态，当我们主动会回调了resolve时，就处于该状态，并且会回调.then()
+      </li>
+      <li>
+        reject:拒绝状态，当我们主动回调了reject时，就处于该状态，并且会回调.catch()
+      </li>
+    </ul>
     <script>
       new Promise((resolve, reject) => {
         setTimeout(() => {
