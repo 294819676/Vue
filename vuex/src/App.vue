@@ -17,6 +17,7 @@
     <button @click="add(10)">+10</button>
     <h3>{{$store.getters.PowerCounter}}</h3>
     <h3>年龄大于15的球员信息:{{$store.getters.more15}}</h3>
+    <h3>年龄大于15的球员共有{{$store.getters.more15Counter}}名</h3>
     <h3>年龄大于{{test1}}的球员信息:{{$store.getters.morex(test1)}}</h3>
     <button @click="addStu">增加球员信息</button>
     <h2>-----HelloVue中内容-----</h2>
@@ -47,7 +48,6 @@ export default {
     GetInput() {
       this.test2 = this.$refs.input1.value;
     },
-
     add(count) {
       //提交风格一
       // this.$store.commit("addCounter", count);
