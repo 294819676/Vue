@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>2020.2.8</title>
+  </head>
+  <script src="./vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/lodash/4.13.1/lodash.js"></script>
+  <body>
+    <div id="app">
+      <p>{{message}}</p>
+      <button @click="testClick">test</button>
+      <button @click="itemClick">输出</button>
+      <input type="text" v-model="text" @input="writeText" />
+    </div>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "你好",
+          text: "",
+          test: "Hello World",
+          num: 5,
+        },
+        methods: {
+          testClick() {
+            setTimeout(() => {
+              this.num++;
+              console.log(this.num);
+            }, 100);
+          },
+          itemClick() {
+            console.log(this.text);
+          },
+          writeText: _.debounce(function () {
+            console.log(this.text);
+          }, 200),
+        },
+        mounted() {
+          setTimeout(() => {
+            console.log(this.test);
+          }, 200);
+        },
+      });
+    </script>
+  </body>
+</html>

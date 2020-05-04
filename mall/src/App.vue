@@ -3,17 +3,15 @@
     <MainTarbar></MainTarbar>
   </div>
 </template>
-
 <script>
-import MainTarbar from "./components/mainTarbar/MainTarbar";
+import MainTarbar from "components/content/mainTarbar/MainTarbar";
 export default {
-  name: "App",
+  name: "app",
   components: {
     MainTarbar
   }
 };
 </script>
-
 <style>
-@import "./assets/css/base.css";
+@import "assets/css/base.css";
 </style>
